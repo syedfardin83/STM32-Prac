@@ -1,0 +1,17 @@
+12:33:13 **** Incremental Build of configuration Debug for project eeprom_test ****
+make -j18 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "eeprom_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\Syed Fardin\Desktop\Coding\STM32-Prac\eeprom_test\STM32L072CZYX_FLASH.ld" --specs=nosys.specs -Wl,-Map="eeprom_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: eeprom_test.elf
+ 
+arm-none-eabi-size  eeprom_test.elf 
+arm-none-eabi-objdump -h -S eeprom_test.elf  > "eeprom_test.list"
+   text	   data	    bss	    dec	    hex	filename
+  21048	    104	   2192	  23344	   5b30	eeprom_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: eeprom_test.list
+ 
+
+12:33:14 Build Finished. 0 errors, 0 warnings. (took 759ms)
+
